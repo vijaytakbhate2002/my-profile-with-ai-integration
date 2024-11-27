@@ -22,6 +22,8 @@ class DocumentLoader:
         self.file_path = file_path
         self.file_format = file_format
 
+
+
     def loadDocuments(self) -> list:
         """
         Reads a PDF file from the given path and extracts text as a list of document objects.

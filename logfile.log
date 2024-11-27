@@ -315,3 +315,51 @@
 2024-11-27 14:32:16 - haystack.modeling.model.language_model - INFO - Auto-detected model language: english
 2024-11-27 14:32:16 - haystack.modeling.model.language_model - INFO - Loaded 'deepset/minilm-uncased-squad2' (Bert model) from model hub.
 2024-11-27 14:32:17 - haystack.modeling.utils - INFO - Using devices: CPU - Number of GPUs: 0
+2024-11-27 16:19:01 - root - INFO - Loading existing FAISS document store...
+2024-11-27 16:19:01 - haystack.modeling.utils - INFO - Using devices: CPU - Number of GPUs: 0
+2024-11-27 16:19:03 - haystack.modeling.model.language_model - WARNING - Using a model of type 'mpnet' which might be incompatible with DPR encoders. Only Bert-based encoders are supported. They need input_ids, token_type_ids, attention_mask as input tensors.
+2024-11-27 16:19:08 - haystack.modeling.model.language_model - INFO - Auto-detected model language: english
+2024-11-27 16:19:09 - haystack.modeling.model.language_model - WARNING - Using a model of type 'mpnet' which might be incompatible with DPR encoders. Only Bert-based encoders are supported. They need input_ids, token_type_ids, attention_mask as input tensors.
+2024-11-27 16:19:10 - haystack.modeling.model.language_model - INFO - Auto-detected model language: english
+2024-11-27 16:19:24 - haystack.modeling.utils - INFO - Using devices: CPU - Number of GPUs: 0
+2024-11-27 16:19:25 - haystack.modeling.model.language_model - WARNING - Using a model of type 'mpnet' which might be incompatible with DPR encoders. Only Bert-based encoders are supported. They need input_ids, token_type_ids, attention_mask as input tensors.
+2024-11-27 16:19:26 - haystack.modeling.model.language_model - INFO - Auto-detected model language: english
+2024-11-27 16:19:27 - haystack.modeling.model.language_model - WARNING - Using a model of type 'mpnet' which might be incompatible with DPR encoders. Only Bert-based encoders are supported. They need input_ids, token_type_ids, attention_mask as input tensors.
+2024-11-27 16:19:28 - haystack.modeling.model.language_model - INFO - Auto-detected model language: english
+2024-11-27 16:19:28 - haystack.modeling.utils - INFO - Using devices: CPU - Number of GPUs: 0
+2024-11-27 16:19:28 - haystack.modeling.utils - INFO - Using devices: CPU - Number of GPUs: 0
+2024-11-27 16:19:29 - haystack.modeling.model.language_model - INFO -  * LOADING MODEL: 'deepset/minilm-uncased-squad2' (Bert)
+2024-11-27 16:19:30 - haystack.modeling.model.language_model - INFO - Auto-detected model language: english
+2024-11-27 16:19:30 - haystack.modeling.model.language_model - INFO - Loaded 'deepset/minilm-uncased-squad2' (Bert model) from model hub.
+2024-11-27 16:19:31 - haystack.modeling.utils - INFO - Using devices: CPU - Number of GPUs: 0
+2024-11-27 16:24:18 - haystack.modeling.utils - INFO - Using devices: CPU - Number of GPUs: 0
+2024-11-27 16:24:20 - haystack.modeling.model.language_model - WARNING - Using a model of type 'mpnet' which might be incompatible with DPR encoders. Only Bert-based encoders are supported. They need input_ids, token_type_ids, attention_mask as input tensors.
+2024-11-27 16:24:27 - haystack.modeling.model.language_model - INFO - Auto-detected model language: english
+2024-11-27 16:24:28 - haystack.modeling.model.language_model - WARNING - Using a model of type 'mpnet' which might be incompatible with DPR encoders. Only Bert-based encoders are supported. They need input_ids, token_type_ids, attention_mask as input tensors.
+2024-11-27 16:24:29 - haystack.modeling.model.language_model - INFO - Auto-detected model language: english
+2024-11-27 16:24:29 - haystack.modeling.utils - INFO - Using devices: CPU - Number of GPUs: 0
+2024-11-27 16:24:29 - haystack.modeling.utils - INFO - Using devices: CPU - Number of GPUs: 0
+2024-11-27 16:24:29 - haystack.modeling.model.language_model - INFO -  * LOADING MODEL: 'deepset/minilm-uncased-squad2' (Bert)
+2024-11-27 16:24:30 - haystack.modeling.model.language_model - INFO - Auto-detected model language: english
+2024-11-27 16:24:30 - haystack.modeling.model.language_model - INFO - Loaded 'deepset/minilm-uncased-squad2' (Bert model) from model hub.
+2024-11-27 16:24:32 - haystack.modeling.utils - INFO - Using devices: CPU - Number of GPUs: 0
+2024-11-27 16:25:27 - haystack.modeling.utils - INFO - Using devices: CPU - Number of GPUs: 0
+2024-11-27 16:25:29 - haystack.modeling.model.language_model - WARNING - Using a model of type 'mpnet' which might be incompatible with DPR encoders. Only Bert-based encoders are supported. They need input_ids, token_type_ids, attention_mask as input tensors.
+2024-11-27 16:25:31 - haystack.modeling.model.language_model - INFO - Auto-detected model language: english
+2024-11-27 16:25:32 - haystack.modeling.model.language_model - WARNING - Using a model of type 'mpnet' which might be incompatible with DPR encoders. Only Bert-based encoders are supported. They need input_ids, token_type_ids, attention_mask as input tensors.
+2024-11-27 16:25:34 - haystack.modeling.model.language_model - INFO - Auto-detected model language: english
+2024-11-27 16:25:34 - root - INFO - Reading text document
+2024-11-27 16:25:34 - root - INFO - Writing documents to the document store...
+2024-11-27 16:25:34 - haystack.document_stores.faiss - INFO - Updating embeddings for 14 docs...
+2024-11-27 16:25:38 - root - INFO - Documents and embeddings updated.
+2024-11-27 16:25:53 - haystack.modeling.utils - INFO - Using devices: CPU - Number of GPUs: 0
+2024-11-27 16:25:54 - haystack.modeling.model.language_model - WARNING - Using a model of type 'mpnet' which might be incompatible with DPR encoders. Only Bert-based encoders are supported. They need input_ids, token_type_ids, attention_mask as input tensors.
+2024-11-27 16:25:56 - haystack.modeling.model.language_model - INFO - Auto-detected model language: english
+2024-11-27 16:25:57 - haystack.modeling.model.language_model - WARNING - Using a model of type 'mpnet' which might be incompatible with DPR encoders. Only Bert-based encoders are supported. They need input_ids, token_type_ids, attention_mask as input tensors.
+2024-11-27 16:25:58 - haystack.modeling.model.language_model - INFO - Auto-detected model language: english
+2024-11-27 16:25:58 - haystack.modeling.utils - INFO - Using devices: CPU - Number of GPUs: 0
+2024-11-27 16:25:58 - haystack.modeling.utils - INFO - Using devices: CPU - Number of GPUs: 0
+2024-11-27 16:25:59 - haystack.modeling.model.language_model - INFO -  * LOADING MODEL: 'deepset/minilm-uncased-squad2' (Bert)
+2024-11-27 16:25:59 - haystack.modeling.model.language_model - INFO - Auto-detected model language: english
+2024-11-27 16:25:59 - haystack.modeling.model.language_model - INFO - Loaded 'deepset/minilm-uncased-squad2' (Bert model) from model hub.
+2024-11-27 16:26:00 - haystack.modeling.utils - INFO - Using devices: CPU - Number of GPUs: 0

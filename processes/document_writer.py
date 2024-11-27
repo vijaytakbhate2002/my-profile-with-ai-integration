@@ -23,44 +23,23 @@ class RAG():
         self.file_format = file_format
         self.faiss_folder = faiss_folder
 
-        if os.path.exists(self.faiss_folder + "/faiss_config.json"):
-            logging.info("Loading existing FAISS document store...")
-            self.document_store = FAISSDocumentStore.load(index_path=os.path.join(self.faiss_folder, "faiss_index"),
-                                                          config_path=os.path.join(self.faiss_folder, "faiss_config.json"))
-        else:
-            logging.info("Creating a new FAISS document store...")
-            os.makedirs(self.faiss_folder, exist_ok=True)
-            self.document_store = FAISSDocumentStore(embedding_dim=768)
-
-        self.retriever = DensePassageRetriever(
-            document_store=self.document_store,
-            query_embedding_model=self.config["query_embedding_model"],
-            passage_embedding_model=self.config["passage_embedding_model"],
-            use_gpu=self.config["use_gpu"]
-        )
-
-        if not self.document_store.faiss_indexes:
-            logging.info("Updating embeddings for the new FAISS document store...")
-            self.document_store.update_embeddings(self.retriever)
-
-
-    def writeInDocumentStore(self, documents:list) -> None:
+    def writeInDocumentStore(self, documents:list, document_store:FAISSDocumentStore, retriever:DensePassageRetriever) -> None:
         """
         Write documents to the document store and save FAISS index to folder.
         """
 
         if documents:
-            existing_docs = len(self.document_store.get_all_documents())
+            existing_docs = len(document_store.get_all_documents())
 
             if existing_docs == 0:
                 logging.info("Writing documents to the document store...")
                 try:
-                    self.document_store.write_documents(documents)
-                    self.document_store.update_embeddings(self.retriever)
+                    document_store.write_documents(documents)
+                    document_store.update_embeddings(retriever)
                 except Exception as e:
                     logging.info("Error during write dicument and update embeddings.....")
                 logging.info("Documents and embeddings updated.")
-                self.document_store.save(index_path=os.path.join(self.faiss_folder, "faiss_index"),
+                document_store.save(index_path=os.path.join(self.faiss_folder, "faiss_index"),
                                          config_path=os.path.join(self.faiss_folder, "faiss_config.json"))
             else:
                 logging.info(f"Document store already contains {existing_docs} documents. Skipping write.")

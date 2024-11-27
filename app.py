@@ -13,7 +13,8 @@ from processes import document_writer
 from processes.document_writer import RAG
 from processes.context_seperator import seperateContext
 from processes.document_loader import DocumentLoader
-
+from haystack.document_stores import FAISSDocumentStore
+from haystack.nodes import DensePassageRetriever
 
 class Retriever(RAG):
 
@@ -22,10 +23,25 @@ class Retriever(RAG):
 
 
     def fit(self) -> None:
-        """" """
-        loader = DocumentLoader(file_path=self.file_path, file_format=self.file_format)
+        """" Load document from given path and write document to """
+        os.makedirs(self.faiss_folder, exist_ok=True)
+        document_store = FAISSDocumentStore(embedding_dim=768)
+
+        retriever = DensePassageRetriever(
+            document_store=document_store,
+            query_embedding_model=self.config["query_embedding_model"],
+            passage_embedding_model=self.config["passage_embedding_model"],
+            use_gpu=self.config["use_gpu"]
+            )
+        
+        loader = DocumentLoader(file_path=self.file_path, 
+                                file_format=self.file_format)
+        
         documents = loader.loadFile()
-        self.writeInDocumentStore(documents=documents)
+        self.writeInDocumentStore(documents = documents, 
+                                  document_store = document_store, 
+                                  retriever=retriever)
+        
 
 
     def retrieve(self, query: str, model_name:str) -> dict:
@@ -33,9 +49,21 @@ class Retriever(RAG):
         Run the pipeline and return retrieval results from the document store.
         """
 
+        document_store = FAISSDocumentStore.load(
+        index_path=os.path.join(self.faiss_folder, "faiss_index"),
+        config_path=os.path.join(self.faiss_folder, "faiss_config.json")
+        )
+
+        retriever = DensePassageRetriever(
+        document_store=document_store,
+        query_embedding_model=self.config["query_embedding_model"],
+        passage_embedding_model=self.config["passage_embedding_model"],
+        use_gpu=self.config["use_gpu"]
+        )
+
         print("Creating Farm reader ......")
-        self.reader = FARMReader(model_name_or_path=model_name)
-        self.pipeline = ExtractiveQAPipeline(reader=self.reader, retriever=self.retriever)
+        self.reader = FARMReader(model_name_or_path=model_name) 
+        self.pipeline = ExtractiveQAPipeline(reader=self.reader, retriever=retriever)
         results = self.pipeline.run(
             query=query,
             params={"Retriever": {"top_k": 3}, "Reader": {"top_k": 3}}
