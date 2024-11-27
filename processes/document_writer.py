@@ -6,11 +6,6 @@ import joblib
 
 class RAG():
 
-    config = {
-        "query_embedding_model": "sentence-transformers/all-mpnet-base-v2",
-        "passage_embedding_model": "sentence-transformers/all-mpnet-base-v2",
-        "use_gpu": True
-    }
 
     def __init__(self, file_path: str, file_format:str, faiss_folder: str = "faiss_index") -> None:
         """

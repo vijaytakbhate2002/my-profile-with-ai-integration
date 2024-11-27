@@ -15,29 +15,38 @@ from processes.context_seperator import seperateContext
 from processes.document_loader import DocumentLoader
 from haystack.document_stores import FAISSDocumentStore
 from haystack.nodes import DensePassageRetriever
+from config import config
 
 class Retriever(RAG):
 
-    def __init__(self, file_path:str, file_format:str) -> None:
-        super().__init__(file_path=file_path, file_format=file_format, faiss_folder='faiss_index')
+    def __init__(self, file_path:str, file_format:str, faiss_folder:str = config.FAISS_INDEX_FOLDER) -> None:
+        super().__init__(file_path=file_path, file_format=file_format, faiss_folder=faiss_folder)
+
+
+    def makeRetriever(self, document_store:FAISSDocumentStore) -> DensePassageRetriever:
+
+        retriever = DensePassageRetriever(
+            document_store=document_store,
+            query_embedding_model=config.QUERY_EMBEDDING_MODEL,
+            passage_embedding_model=config.PASSAGE_EMBEDDING_MODEL,
+            use_gpu=config.USE_GPU
+            )
+        
+        return retriever
+
 
 
     def fit(self) -> None:
         """" Load document from given path and write document to """
+
         os.makedirs(self.faiss_folder, exist_ok=True)
         document_store = FAISSDocumentStore(embedding_dim=768)
+        retriever = self.makeRetriever(document_store=document_store)
 
-        retriever = DensePassageRetriever(
-            document_store=document_store,
-            query_embedding_model=self.config["query_embedding_model"],
-            passage_embedding_model=self.config["passage_embedding_model"],
-            use_gpu=self.config["use_gpu"]
-            )
-        
         loader = DocumentLoader(file_path=self.file_path, 
                                 file_format=self.file_format)
-        
         documents = loader.loadFile()
+
         self.writeInDocumentStore(documents = documents, 
                                   document_store = document_store, 
                                   retriever=retriever)
@@ -50,24 +59,19 @@ class Retriever(RAG):
         """
 
         document_store = FAISSDocumentStore.load(
-        index_path=os.path.join(self.faiss_folder, "faiss_index"),
-        config_path=os.path.join(self.faiss_folder, "faiss_config.json")
-        )
-
-        retriever = DensePassageRetriever(
-        document_store=document_store,
-        query_embedding_model=self.config["query_embedding_model"],
-        passage_embedding_model=self.config["passage_embedding_model"],
-        use_gpu=self.config["use_gpu"]
-        )
+                                                index_path=os.path.join(config.FAISS_INDEX_FILE),
+                                                config_path=os.path.join(config.FAISS_CONFIG_FILE)
+                                                )
+        retriever = self.makeRetriever(document_store=document_store)
 
         print("Creating Farm reader ......")
         self.reader = FARMReader(model_name_or_path=model_name) 
         self.pipeline = ExtractiveQAPipeline(reader=self.reader, retriever=retriever)
         results = self.pipeline.run(
             query=query,
-            params={"Retriever": {"top_k": 3}, "Reader": {"top_k": 3}}
+            params={"Retriever": {"top_k": config.TOP_K_RETRIEVER}, "Reader": {"top_k": config.TOP_K_READER}}
         )
+
         return results
 
 
@@ -79,18 +83,19 @@ class Retriever(RAG):
         return results
 
 
+
 if __name__ == "__main__":
 
-    file_path = "data\\resume_content1.txt"
+    file_path = config.CONTENT
     rag = Retriever(file_path=file_path, file_format='.txt')
 
-    if os.path.exists("faiss_index\\faiss_config.json") and os.path.exists("faiss_document_store.db"):
+    if os.path.exists(config.FAISS_CONFIG_FILE) and os.path.exists(config.FAISS_DB_FILE):
         print("Loading created embedings and db...")
     else:
         print("fitting document to generate embeddings...")
         rag.fit()
 
-    model = "deepset/minilm-uncased-squad2"
+    model = config.RAG_MODEL
     query = input("Enter your question here...")
     results = rag.showAnswer(query=query, model_name=model)
     for result in results['answers']:
