@@ -1,0 +1,352 @@
+
+Personal Information
+
+Name: Vijay Takbhate
+Email: vijaytakbhate20@gmail.com Phone: 8767363681
+GitHub: https://github.com/vijaytakbhate2002
+LinkedIn: https://www.linkedin.com/in/vijay-takbhate-b9231a236/ Kaggle: https://www.kaggle.com/vijay20213
+
+-----
+
+Experience - Fox Solutions Pvt. Ltd.
+Role: Automation Engineer Duration: Jun 2024 - Oct 2024 Location: Maharashtra
+Key Contributions:
+-Completed 2 months of internship plus 4 months of full-time work.
+-Worked with PLC and SCADA systems, focusing on automating processes and optimizing operational efficiency.
+-Collaborated with cross-functional teams to implement automation solutions for industrial applications.
+
+-----
+
+Experience - Cei Design Consultancy Pvt. Ltd.
+Role: Python Developer Intern Duration: Aug 2024 - Sept 2024 Location: Remote, Maharashtra
+Key Contributions:
+-Specialized in data processing using Python and Excel.
+-Utilized OpenCV for image processing tasks.
+
+-----
+
+Experience - Ujucode
+Role: Subject Matter Expert Intern Duration: Aug 2023 - Oct 2023 Location: Remote, Maharashtra
+Key Contributions:
+-Contributed as a Python developer for a ChatBot project.
+-Handled backend development tasks and researched Python modules.
+
+-----
+
+Project - Twitter Post Sentiment Prediction
+Details:
+-Engineered an ETL pipeline using PySpark and SQL.
+-Conducted sentiment analysis using NLP (TF-IDF) and optimized hyperparameters.
+-Monitored model performance through MLFlow on Databricks.
+-Leveraged Google Cloud Storage and MySQL for data management.
+-Deployed the model using Docker and hosted it on Render.
+
+-----
+
+Project - Text-Text Chat-Bot
+Details:
+-Designed an advanced Chat-Bot using the NVIDIA API and prompt engineering.
+-Features include paraphrasing, grammar correction, AI detection, plagiarism checking, and content summarization.
+-Targeted at content creators, researchers, and businesses.
+-Technologies Used: HTML, CSS, Python Flask, Cloud Database, and Render.
+
+-----
+
+Project - Hand Gesture Recognition
+Details:
+-Used Google-s MediaPipe framework for detecting hand landmarks and gestures.
+-Created and labeled a custom dataset of hand gestures for training.
+-Developed a Streamlit application to improve accessibility and flexibility.
+
+-----
+
+Technical Skills
+Languages: MySQL, Python, HTML, CSS
+Technologies: Streamlit, Flask, VS Code, GitHub, MLflow, Docker, PySpark, Databricks, Google Cloud Platform
+
+-----
+
+Certification
+MLOps Bootcamp: Mastering AI Operations for Success (Jun 2024)
+-Learned about the MLOps lifecycle and modular programming.
+-Acquired skills in Git, Python, Flask, and MLflow.
+
+-----
+
+Education Details:
+Bachelor of Technology in Electronics and Telecommunication (May 2024) Institution: SVERI-s College of Engineering, Pandharpur, Maharashtra Score: 81.71
+Diploma in Electronics and Telecommunication (May 2021) Institution: SVERI-s College of Engineering, Pandharpur, Maharashtra Score: 91.73
+
+-----
+
+Blogging
+
+
+Supervised, Unsupervised, and Beyond: ML Techniques Simplified
+November 25, 2024
+There are several techniques for ML training. Among these, I will cover the following:
+
+Supervised and Unsupervised Learning
+Semi-Supervised Learning
+Offline and Online Learning
+Instance-Based and Model-Based Learning
+
+Supervised and Unsupervised Learning
+Supervised learning is like spoon-feeding our ML model in its initial stages, allowing it to learn and improve over time. Here, I’m referring to the training process.
+
+In supervised learning, there are input columns and output columns, also called target columns. For example, in spam detection—a classification problem—the input is the email, and the target is whether the email is spam or not. That’s it!
+This process resembles a student-teacher scenario where the teacher is a human, and the student is the model. The dataset serves as the knowledge used to train the student (model)
+See content credentials
+
+humand and model
+In Unsupervised learning, we are not aware of the data labels. Instead, we separate the input data by analyzing similarities and grouping them into different clusters.
+Once the clusters are formed, we can assign custom labels to each one. This technique is widely used to identify product relationships in online shopping and to recommend new products based on a user’s purchase history.
+
+Unsupervised Learning Clusters
+Here three clusters with three different image categories are formed
+
+Semi-Supervised Learning
+Semi-Supervised Learning is a combination of supervised and unsupervised learning, where some data is labeled and some data is unlabeled. A good example of this is Google Photos, which automatically separates new photos into their respective groups based on whether they contain a particular person in each image.
+
+There are several techniques under semi-supervised learning; here, we will focus on the following:
+Self Learning
+Consistency Regularization
+Generative Models
+Graph-Based Learning
+
+Let's discuss them one by one:
+
+Self Learning
+Self Learning trains a model with labeled data and generates pseudo-labels for the unlabeled data. 
+
+Self learning
+Then, the model is trained on the entire dataset, which includes both the generated pseudo-labels and the labeled data.
+
+Consistency Regularization
+This technique uses data augmentation to generate similar data, and then the model is enforced to predict the same outcome for both the augmented and original data. It helps create a model that can find similarities in both labeled and unlabeled data, predicting the same output for unlabeled data as it would for labeled data.
+
+Data augmentation includes techniques like image flipping, blurring, rotation, etc. After augmenting the data, the model is trained to predict the same class for both the augmented and original images.
+
+Generative Models
+Generative models create synthetic data points and learn the underlying structure of the training data. These models can generate new datasets using encoders. 
+
+Examples include Generative Adversarial Networks (GANs) and Variational Autoencoders (VAEs).
+
+Graph-Based Learning
+This technique creates nodes for both labeled and unlabeled data. Similar nodes are then connected to each other.
+For example, when dealing with images, each image starts as a separate node. If similar images are found based on their features, they are grouped or connected by an edge.
+Refer below graph to understand graph-based learning
+Graph based learning
+Here label 1 is came from labeled image of group 1, simillarly for label 2 and label 3. Finally we came up with three labels that means labeled data has three unique labels.
+Batch (Offline) and Online Learning
+Batch Learning
+Batch learning, also known as offline learning, is a technique where the developer needs to stop the deployed ML model, retrain it on new data, and then redeploy it. 
+This technique is useful when frequent updates are not required. For example, product recommendation systems can often be retrained weekly or even over several days.
+Batch learning can be costly when training the model on the entire dataset every time. However, using incremental learning models can help avoid unnecessary retraining, making the process more efficient.
+Here are some examples on incremental learning models, as of now we are focusing on general concepts so don't go much deeper into these types.
+Stochastic Gradient Descent (SGD)
+Naive Bayes (Online Version)
+Incremental Support Vector Machines (ISVM)
+Online Random Forests
+Incremental Decision Trees
+You can refer this article to learn more about incremental learning
+Here’s your text with grammatical corrections and improved clarity:
+Online Learning
+Online learning is used when an ML model needs to be updated continuously with new inputs, such as in stock price prediction. In this scenario, the model must remain aware of the most recent data.
+
+Batch and online learning
+Only models capable of incremental learning are used in online learning. Each new instance is fed back into the model to update its internal weights based on the latest input.
+
+Instance-Based and Model-Based Learning
+Instance-Based Learning
+Instance-based learning involves comparing a new input with stored data. If similarity is found, the model returns the label of the corresponding input. This approach uses pattern matching techniques. 
+Here model works as a search engin not exactly same but it will find simmilarity from stored data.
+Some common models used in instance-based learning include:
+K-Nearest Neighbors (K-NN) with labels
+Locally Weighted Regression, etc.
+Model-Based Learning
+In model-based learning, we train the model using a training dataset. During the training process, the model creates its own complex patterns (mathematical equations) to make predictions for future inputs. 
+A simple example is the equation y=mx+cy = mx + c, which represents a trained model. Some common models used in model-based learning include:
+Linear Regression
+Logistic Regression
+Decision Tree, etc.
+
+Summary
+Machine Learning techniques can be broadly categorized into supervised, unsupervised, and semi-supervised learning. 
+Supervised learning uses labeled data, like spam detection, while unsupervised learning works with unlabeled data, grouping similar points into clusters. 
+Semi-supervised learning combines both, employing techniques like self-learning and consistency regularization to leverage partially labeled datasets.
+Other approaches include batch learning, where models are retrained periodically, and online learning, which updates models continuously with new data, suitable for dynamic tasks like stock price prediction. 
+Instance-based learning relies on pattern matching (e.g., K-Nearest Neighbors), while model-based learning creates mathematical models (e.g., Linear Regression) to make predictions.
+This is all about Machine Learning techniques. If you learned something, let me know in the comments. Your suggestions will help me improve my blogs.
+Thanks for reading!
+
+-----
+Blogging
+
+Mastering the End-to-End Machine Learning Lifecycle: From Data to Deployment
+
+November 24, 2024
+ This article takes you through the complete lifecycle of a Machine Learning project. From ETL to deployment, I’ll share every detail of how I brought this project to life.
+Data Engineering
+Data Engineering serves as the starting point in the Machine Learning project lifecycle, bringing all distributed data together in one place.
+For this project, I utilized an ETL pipeline—a core concept in Data Engineering. It enabled me to extract raw data, transform it into a meaningful format, and load it into a suitable location for further processing.
+Let's deep dive into ETL pipeline
+ETL stands for Extract, Transform, and Load. These pipelines can be executed periodically (e.g., daily or hourly) to fetch real-time data, enhancing the predictive power of our Machine Learning model for real-world applications.
+This process can be automated using tools like Apache Airflow, Kubeflow Pipelines, AWS Step Functions, and more, streamlining the workflow for consistent and efficient data updates.
+
+ETL Pipeline:
+ETL Pipeline
+Extract Operation
+The extract operation is responsible for fetching data from various sources such as websites, databases, and APIs, as illustrated in the flowchart above.
+
+Transform Operation
+The transform operation focuses on data cleaning, feature selection, and manipulation. In my project, I used this step to extract only the required features, ensuring the data is ready for the next phase.
+
+Load Operation
+The load operation transfers the transformed data to its destination, where we can choose the appropriate storage format. Typically, the processed data is stored in a database for further analysis and model training.
+
+For my project, I used PySpark to build the ETL pipeline, as it enables efficient processing of large datasets.
+Why not Pandas?
+While Pandas is excellent for small to medium-sized datasets, it stores DataFrames in RAM, which can lead to out-of-memory exceptions when handling large datasets.
+In contrast, PySpark creates a session and processes data in chunks, storing it in ROM, making it ideal for handling large-scale data.
+For the actual implementation of the pipeline using PySpark, please refer to the accompanying jupyter notebook.
+EDA (Data Analysis)
+Data understanding is a critical stage before building any Machine Learning model. It allows us to analyze the data, plan the data processing steps, and gain insights into its structure and quality.
+In this project, I examined the balance of data in my training and testing datasets and found it to be well-distributed across all four categories.
+
+Balanceness Checking on train and test data
+Throughout the entire process, I focused on two columns:
+Tweets
+Sentiments
+The Tweets column contains the raw Twitter text data, while the Sentiments column serves as the target variable for prediction.
+Natural Language Processing
+I applied several key NLP techniques to preprocess the data and prepare it for Machine Learning model building. Below are the main steps I executed:
+
+Text Processing
+Regex: I applied regular expressions to clean the text by removing URLs, hashtags, HTML tags, and keeping only alphanumeric characters. This helped eliminate unnecessary noise from the data.
+NLTK: Using the Natural Language Toolkit (NLTK), I performed word tokenization, stemming and lemmatization.
+Word tokenization is just splitting sentence into words, so we can processing each word from sentence individually.
+Stemming helps us to truncate prefix or suffix of text to reduce count on unique words from corpus (paragraph).
+Lemmatization is the proecss of converting any word into it's base word, for eg. Played will convert to play.
+
+WordCloud 
+Word cloud concept help you to understand importance of words from given data. I splitted my data into four sections.
+data for negative sentiments
+data for positive sentiments
+data for neutral sentiments
+data for irrelevant sentiments
+
+Here is the representation of most frequent words for each category.
+Categorywise Word Cloud Presentation
+Here you can clearly see that there is no much difference in negative and positive sentiments data.
+this is representation of bad data, here we can filterout our data for further processing, it might reduce data but you can do data augmentation techniques here to increase your data.
+augmenting of data in NLP with TF-IDF will not bad idea because TF-IDF and any other porcessing technique that I used is not able to detect sentence grammer or it doesn,t require sophisticated text. 
+You can think our input text will work as bag of word for model. you can understand by refering below vectorization technique.
+Vectorization with TF-IDF 
+I used Term Frequency-Inverse Document Frequency (TF-IDF) for text vectorization. This method transforms text into a numerical format, considering the importance of each word across documents, which prevents frequent words from dominating the model.
+
+TF-IDF
+TF-IDF stands for Term Frequency-Inverse Document Frequency. 
+Term Frequency (TF): This measures how frequently a term (t) appears in a specific document (d). It's calculated by dividing the number of occurrences of the term in the document by the total number of terms in that document.
+Inverse Document Frequency (IDF): This measures how important a term is across the entire collection of documents. It's calculated by taking the logarithm of the ratio of the total number of documents (N) to the number of documents containing the term (df(t)). A higher IDF value indicates a rarer term, making it more significant.
+Here is the resulant data we got from TF-IDF
+After all preprocessing of text it's time to save our data for mlflow experiments. To see actual implementation of end to end process of NLP you can refer jupyter notebook.
+mlflow experiments
+MLflow experiments allow you to conduct multiple experiments with your trained model, helping you track and compare results over time. For running MLflow experiments, I prefer using Databricks as it offers an integrated experiment section, making the process much more streamlined and efficient.
+In Databricks, you can easily connect your experiment by passing the experiment ID into the MLflow code. This integration simplifies the entire workflow, enabling better experiment tracking and easier comparison of model performance.
+For my experiments, I worked with several models, including Logistic Regression, Multinomial Naive Bayes, and Decision Tree Classifier. By applying different combinations of parameters, I was able to experiment with and compare the performance of each model. Here's a preview of the Logistic Regression model’s F1 score, which highlights the model's ability to balance precision and recall:
+Logistic Regression F1 Score: 0.58
+This approach allowed me to track the effectiveness of each model and make adjustments as needed for improving performance.
+
+F1 score with different parameters (Logistic Regression)
+I recommend running the notebook below in your own account to see the results. You'll definitely start appreciating the power of MLflow.
+For more information, please refer to the accompanying Databricks notebook.
+
+Hyperparameter tuning
+Hyperparameter tuning is crucial for identifying the best parameter combination for your model. This technique involves an iterative process where, for every parameter combination, the model is trained and tested on a dataset. It is often described as a "trial and error" method.
+However, this approach can be computationally expensive, especially when working with complex or heavy machine learning models. For large-scale problems, hyperparameter tuning can be made more efficient through sampling or batch methods. In these methods, you don't use the entire dataset for training the model; instead, you choose random or stratified data points from the dataset to train the model. Although this may slightly reduce accuracy, it is more feasible when working with large datasets.
+For my project, I used Grid Search CV to find the best hyperparameter combination for the model. Below are some common techniques for hyperparameter tuning, especially for large datasets:
+Grid Search This technique exhaustively searches through a specified set of hyperparameter values, trying all possible combinations. While effective, it can be computationally expensive for larger datasets due to the exhaustive nature of the search.
+Random Search Randomly samples from the hyperparameter space, offering a faster alternative to grid search. This method explores a wider range of hyperparameters with fewer evaluations, making it more efficient for larger datasets.
+Bayesian Optimization This method uses probabilistic models to predict the performance of different hyperparameters. It selects the next set of hyperparameters to evaluate based on previous results, making it more efficient and suitable for large datasets.
+Genetic Algorithms Inspired by natural selection, these algorithms iteratively evolve a population of hyperparameter sets to improve model performance. This method works well with complex search spaces.
+Hyperband Hyperband combines random search with early stopping to dynamically allocate resources across multiple configurations, identifying promising hyperparameters quickly without excessive computational costs.
+Bayesian Optimization with Gaussian Processes This technique models the hyperparameter search space using Gaussian processes, focusing on regions that are likely to yield better results, which is particularly useful for large datasets where computational resources are limited.
+
+To optimize hyperparameter tuning for larger datasets, these techniques can be combined with parallel computing and distributed processing frameworks such as Dask, Spark, or multi-GPU setups. This enables more efficient hyperparameter search and reduces the overall computational overhead.
+I choosed Logistc Regression model and trained my Model with best parameters.
+Source Distribution for Model Packaging
+Packaging your machine learning model is a best practice, especially if you don’t plan to update it frequently. Imagine thousands of lines of code that can now be utilized with just a single line—this is the power of model packaging.
+
+1. Project Folder Setup
+To ensure better organization, I created a main folder called sentiment_prediction and moved all machine learning pipeline files and dependencies into this folder. This helped in maintaining a clean structure and simplified the management of the entire project.
+Before moving forward I recommend you to visit this pdf it will practically show you step by step process for building python package.
+PDF : step by step guid for python package building
+
+2. Manifest.in
+The Manifest.in file plays a crucial role in controlling which files and folders should be included or excluded during the packaging process. It helps to specify the structure of the package for distribution.
+Key commands used in the Manifest.in file include:
+include <file/folder>: Include specific files or folders.
+exclude <file/folder>: Exclude specific files or folders.
+recursive-include <path>: Include all files from a directory recursively.
+recursive-exclude <path>: Exclude all files from a directory recursively.
+3. Setup.py
+The setup.py file contains the project's metadata and is essential for creating the package. It defines key information about the project, such as:
+Project name, version, description, and author details.
+Dependencies required for the package (install_requires), making it easy to install all necessary libraries.
+
+4. Building the Package
+To build the package, I used the following command:
+
+python setup.py sdist bdist_wheel
+This command generates two folders:
+
+build/: Contains the entire project package as defined in the Manifest.in.
+dist/: Contains the distributable files: .whl (wheel file) .gz (compressed source archive)
+
+5. Global Access via GitHub
+Now you can access your package gloablly, by refering your repository. I provided my package below go and check out.
+
+Repository: GitHub Repo Link
+You can install the package directly from GitHub using the following command:
+
+pip install git+https://github.com/vijaytakbhate2002/sentiment_prediction_python_package.git 
+To ensure it worked globally, I tested it again:
+
+from sentiment_prediction import predict
+print(predict.predictor("Great progress shared today!")) 
+output:['Negative']
+Flask Application 
+Building application will help us to give our NLP model experience to people, so I built one flask application.
+Web Application UI
+
+Here is demonstration of project: project demo
+I left a blank section for user suggestion and feedback, these feedbacks are getting stored in database for future model analysis or any business work.
+Database configuration
+For storing collected user data we need to configure a database. It will help us to improve model as per user need.
+I used Google Cloud MySQL instance for integrating my application with database, GCP is paid but you can use free credit of GCP for first 3 months, for doing almost all Cloud Work.
+You need to create your GCP account, then create one instance under SQL and by configuring your local system with instance you are good to go.
+Docker containerization
+If you are not awared about docker and it's basic concepts you can refer my previous article which explains you all about docker.
+This guide will help you build a solid foundation in Docker, enabling you to confidently use it for your projects.
+Docker guide: Comprehensive Docker guide for deploying Flas app
+Deploy
+Deployment of web app will help us to engange people and provide them real actual experience of our services.
+After deployment you need to collect user data and store it for future analysis, this data contain user feedback and suggestions.
+After deployment it's not end of the process we need to collect user feedback and again follow same steps fine tune Model as per user need.
+
+Summary of Blog
+This blog covers the lifecycle of a Machine Learning project, from ETL to deployment. It details building an ETL pipeline using PySpark for efficient data handling, EDA, and NLP preprocessing techniques like tokenization, TF-IDF, and WordCloud visualization. 
+It highlights ML experiments with MLflow on Databricks and hyperparameter tuning using Grid Search.
+The model was packaged into a Python package and deployed as a Flask application with a database backend (Google Cloud MySQL) and Dockerized for scalability. 
+The app collects user feedback for continuous improvement. It emphasizes end-to-end integration, including cloud and containerization, to deliver a robust ML solution.
+Happy Learning!
+
+-----
+Languages I Speak
+English, Marathi, Hindi
+
+-----
+
+Soft skills:
+Critical Thinking, Intellectual Rigor, Problem Solving, Understanding Business Needs

@@ -1,0 +1,97 @@
+Personal Information
+
+Name: Vijay Takbhate
+Email: vijaytakbhate20@gmail.com Phone: 8767363681
+GitHub: https://github.com/vijaytakbhate2002
+LinkedIn: https://www.linkedin.com/in/vijay-takbhate-b9231a236/ Kaggle: https://www.kaggle.com/vijay20213
+
+-----
+
+Experience - Fox Solutions Pvt. Ltd.
+Role: Automation Engineer Duration: Jun 2024 - Oct 2024 Location: Maharashtra
+Key Contributions:
+-Completed 2 months of internship plus 4 months of full-time work.
+-Worked with PLC and SCADA systems, focusing on automating processes and optimizing operational efficiency.
+-Collaborated with cross-functional teams to implement automation solutions for industrial applications.
+
+-----
+
+Experience - Cei Design Consultancy Pvt. Ltd.
+Role: Python Developer Intern Duration: Aug 2024 - Sept 2024 Location: Remote, Maharashtra
+Key Contributions:
+-Specialized in data processing using Python and Excel.
+-Utilized OpenCV for image processing tasks.
+
+-----
+
+Experience - Ujucode
+Role: Subject Matter Expert Intern Duration: Aug 2023 - Oct 2023 Location: Remote, Maharashtra
+Key Contributions:
+-Contributed as a Python developer for a ChatBot project.
+-Handled backend development tasks and researched Python modules.
+
+-----
+
+Project - Twitter Post Sentiment Prediction
+Details:
+-Engineered an ETL pipeline using PySpark and SQL.
+-Conducted sentiment analysis using NLP (TF-IDF) and optimized hyperparameters.
+-Monitored model performance through MLFlow on Databricks.
+-Leveraged Google Cloud Storage and MySQL for data management.
+-Deployed the model using Docker and hosted it on Render.
+
+-----
+
+Project - Text-Text Chat-Bot
+Details:
+-Designed an advanced Chat-Bot using the NVIDIA API and prompt engineering.
+-Features include paraphrasing, grammar correction, AI detection, plagiarism checking, and content summarization.
+-Targeted at content creators, researchers, and businesses.
+-Technologies Used: HTML, CSS, Python Flask, Cloud Database, and Render.
+
+-----
+
+Project - Hand Gesture Recognition
+Details:
+-Used Google-s MediaPipe framework for detecting hand landmarks and gestures.
+-Created and labeled a custom dataset of hand gestures for training.
+-Developed a Streamlit application to improve accessibility and flexibility.
+
+-----
+
+Technical Skills
+Languages: MySQL, Python, HTML, CSS
+Technologies: Streamlit, Flask, VS Code, GitHub, MLflow, Docker, PySpark, Databricks, Google Cloud Platform
+
+-----
+
+Certification
+MLOps Bootcamp: Mastering AI Operations for Success (Jun 2024)
+-Learned about the MLOps lifecycle and modular programming.
+-Acquired skills in Git, Python, Flask, and MLflow.
+
+-----
+
+Education Details:
+Bachelor of Technology in Electronics and Telecommunication (May 2024) Institution: SVERI-s College of Engineering, Pandharpur, Maharashtra Score: 81.71
+Diploma in Electronics and Telecommunication (May 2021) Institution: SVERI-s College of Engineering, Pandharpur, Maharashtra Score: 91.73
+
+-----
+
+Blogging
+
+1.Comprehensive Docker Guide - Containerizing Flask Applications
+-Explained core Docker components, including Dockerfile, images, and containers.
+-Provided hands-on tutorials for building, running, and scaling applications.
+
+2.What is Statistical Inference?
+- Discussed parametric inference and hypothesis testing using real-life examples.
+
+-----
+Languages I Speak
+English, Marathi, Hindi
+
+-----
+
+Soft skills:
+Critical Thinking, Intellectual Rigor, Problem Solving, Understanding Business Needs
