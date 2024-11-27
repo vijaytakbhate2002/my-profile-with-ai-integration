@@ -1,4 +1,4 @@
-.env
-logfile
 myenv
 .log
+logfile
+logfile.log

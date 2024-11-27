@@ -9,9 +9,7 @@ logging.basicConfig(
     datefmt='%Y-%m-%d %H:%M:%S',
     handlers=[logging.FileHandler("logfile.log", mode='a')]
 )
-from processes import document_writer
 from processes.document_writer import RAG
-from processes.context_seperator import seperateContext
 from processes.document_loader import DocumentLoader
 from haystack.document_stores import FAISSDocumentStore
 from haystack.nodes import DensePassageRetriever
