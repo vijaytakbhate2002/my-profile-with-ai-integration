@@ -4,7 +4,7 @@ FAISS_DB_FILE = "faiss_document_store.db"
 FAISS_INDEX_FOLDER = "faiss_index"
 FAISS_CONFIG_FILE = os.path.join(FAISS_INDEX_FOLDER, "faiss_config.json")
 FAISS_INDEX_FILE = os.path.join(FAISS_INDEX_FOLDER, "faiss_index")
-CONTENT = "data\\resume_content1.txt"
+CONTENT = "data\\resume_content.txt"
 
 RAG_MODEL = "deepset/minilm-uncased-squad2"
 

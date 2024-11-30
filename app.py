@@ -22,6 +22,7 @@ class Retriever(RAG):
 
 
     def makeRetriever(self, document_store:FAISSDocumentStore) -> DensePassageRetriever:
+        """ Create a retriver with DensePassageRetriever and return retriver"""
 
         retriever = DensePassageRetriever(
             document_store=document_store,
@@ -31,6 +32,7 @@ class Retriever(RAG):
             )
         
         return retriever
+
 
 
 
@@ -51,6 +53,7 @@ class Retriever(RAG):
         
 
 
+
     def retrieve(self, query: str, model_name:str) -> dict:
         """
         Run the pipeline and return retrieval results from the document store.
@@ -62,7 +65,6 @@ class Retriever(RAG):
                                                 )
         retriever = self.makeRetriever(document_store=document_store)
 
-        print("Creating Farm reader ......")
         self.reader = FARMReader(model_name_or_path=model_name) 
         self.pipeline = ExtractiveQAPipeline(reader=self.reader, retriever=retriever)
         results = self.pipeline.run(
@@ -73,12 +75,15 @@ class Retriever(RAG):
         return results
 
 
-    def showAnswer(self, query: str, model_name:str="deepset/minilm-uncased-squad2") -> None:
+
+
+    def showAnswer(self, query: str, model_name:str) -> None:
         """
         Retrieve answers to a query and display them.
         """
         results = self.retrieve(query=query, model_name=model_name)
         return results
+
 
 
 
