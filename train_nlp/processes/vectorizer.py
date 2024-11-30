@@ -35,7 +35,7 @@ class Vectorizer:
         df.drop(num_cols, axis='columns', inplace=True)
         return df
 
-    def tf_idfVectorizer(self, df:pd.DataFrame, column_name:str) -> pd.DataFrame:
+    def tf_idfVectorizer(self, X:pd.Series) -> pd.DataFrame:
         """ 
             Apply TF-IDF Vectorizer on given column of dataframe, 
             Check self.avoid_numerical_text if it is True, 
@@ -46,15 +46,15 @@ class Vectorizer:
             """
 
         tf = TfidfVectorizer(min_df=self.MIN_DF)
-        tf_df = tf.fit_transform(df[column_name])
+        tf_df = tf.fit_transform(X)
         arr = tf_df.toarray()
-        df = pd.DataFrame(arr, columns=tf.get_feature_names_out())
+        df = pd.DataFrame(arr)
 
         if self.avoid_numerical_text:
             return self.avoidNumerical(df)
         return df
     
-    def countVectorizer(self, df:pd.DataFrame, column_name:str) -> pd.DataFrame:
+    def countVectorizer(self, X:pd.Series) -> pd.DataFrame:
         """ 
             Apply TF-IDF Vectorizer on given column of dataframe, 
             Check self.avoid_numerical_text if itArgs: 
@@ -67,15 +67,15 @@ class Vectorizer:
             """
 
         tf = CountVectorizer(min_df=self.MIN_DF)
-        tf_df = tf.fit_transform(df[column_name])
+        tf_df = tf.fit_transform(X)
         arr = tf_df.toarray()
-        df = pd.DataFrame(arr, columns=tf.get_feature_names_out())
+        df = pd.DataFrame(arr)
 
         if self.avoid_numerical_text:
             return self.avoidNumerical(df)
         return df
     
-    def vectorize(self, vectorizer_abbrivation:str, df:pd.DataFrame, column_name:str) -> pd.DataFrame:
+    def vectorize(self, X:pd.Series, vectorizer_abbrivation:str) -> pd.DataFrame:
         """ apply vectorization on given df and return
             Args:
                 vectorizer_abbrivation: str (choose from ('tf-idf', 'count'))
@@ -85,8 +85,8 @@ class Vectorizer:
             """
         
         if vectorizer_abbrivation == 'tf-idf':
-            return self.tf_idfVectorizer(df=df, column_name=column_name)
+            return self.tf_idfVectorizer(X=X)
         elif vectorizer_abbrivation == 'count':
-            return self.countVectorizer(df=df, column_name=column_name)
+            return self.countVectorizer(X=X)
         
         raise ValueError("wrong vectorizer_abbrivation choose from ('tf-idf', 'count')")

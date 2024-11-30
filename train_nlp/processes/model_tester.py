@@ -21,14 +21,13 @@ class Tester:
             Args: 
                 X: pd.DataFrame
                 y: pd.Series
-                """
+        """
         X_train, X_test, y_train, y_test = train_test_split(X, y, 
                                                             test_size=self.test_size, 
                                                             stratify=self.stratify,
                                                             shuffle=True, random_state=42)
         return (X_train, X_test, y_train, y_test)
     
-
     def classificationMatrices(self, y_true:pd.Series, y_pred:pd.Series) -> dict:
         """ 
             calculates (accuracy, precision, recall, f1) from given y_true and y_pred
